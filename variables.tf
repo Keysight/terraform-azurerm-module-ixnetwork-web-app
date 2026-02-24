@@ -22,7 +22,7 @@ variable "Eth0SubnetId" {
 }
 
 variable "ImageSku" {
-	default = "keysight-ixnetwork-virtual-edition-webclient-26-0-0"
+	default = "keysight-ixnetwork-virtual-edition-web-26-0-0"
 	description = "An instance of an offer, such as a major release of a distribution."
 	type = string
 }
