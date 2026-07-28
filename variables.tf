@@ -10,6 +10,12 @@ variable "DisablePasswordAuthentication" {
 	type = bool
 }
 
+variable "EnableAcceleratedNetworking" {
+	default = true
+	description = "Enables SR-IOV on supported VMs to improve networking performance"
+	type = bool
+}
+
 variable "EnableIpForwarding" {
 	default = false
 	description = "Enables forwarding of network traffic to an address not assigned to VM"
@@ -22,13 +28,13 @@ variable "Eth0SubnetId" {
 }
 
 variable "ImageSku" {
-	default = "keysight-ixnetwork-virtual-edition-web-26-0-0"
+	default = "keysight-ixnetwork-virtual-edition-web-26-3-0"
 	description = "An instance of an offer, such as a major release of a distribution."
 	type = string
 }
 
 variable "ImageVersion" {
-	default = "26.0.56"
+	default = "26.3.0"
 	description = "The version number of an image SKU."
 	type = string
 }
@@ -59,6 +65,12 @@ variable "ResourceGroupLocation" {
 
 variable "ResourceGroupName" {
 	description = "Id of container that holds related resources that you want to manage together"
+	type = string
+}
+
+variable "SleepDelay" {
+	default = "7m"
+	description = "Time duration to delay to allow application to perform internal initialization required before use"
 	type = string
 }
 
@@ -100,7 +112,7 @@ variable "UserProjectTag" {
 }
 
 variable "Version" {
-	default = "26.0.0"
+	default = "26.3.0"
 	description = "Versioning of the application using the deployment"
 	type = string
 }

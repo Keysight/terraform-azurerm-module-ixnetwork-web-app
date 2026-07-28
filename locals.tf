@@ -2,7 +2,7 @@ locals {
 	AdminUserName = var.AdminUserName
 	DisablePasswordAuthentication = var.DisablePasswordAuthentication
 	DnsLabel = replace(replace(lower("${local.Preamble}-dns"), "_", "-"), ".", "-")
-	EnableAcceleratedNetworking = true
+	EnableAcceleratedNetworking = var.EnableAcceleratedNetworking
 	EnableIpForwarding = var.EnableIpForwarding
 	Eth0Name = "${local.Preamble}-eth0"
 	Eth0PublicIpAddressName = "${local.Preamble}-eth0-public-ip"
@@ -18,6 +18,7 @@ locals {
 	Preamble = "${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}"
 	ResourceGroupLocation = var.ResourceGroupLocation
 	ResourceGroupName = var.ResourceGroupName
+	SleepDelay = var.SleepDelay
 	SshKeyName = var.SshKeyName
 	Tag = var.Tag
 	UserEmailTag = var.UserEmailTag
